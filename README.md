@@ -35,6 +35,9 @@ No metrics and logs support.
 
 Auto scaling of pods. 
 
+## The app screenshot
+![github-small](https://github.com/harshavmb/notejam/blob/master/notejam.PNG)
+
 License
 -------
 None
