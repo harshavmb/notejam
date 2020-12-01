@@ -1,0 +1,35 @@
+[rhel-atomic-host-rpms]
+name=rhel-atomic-host-rpms
+baseurl=https://repository.redhat.com/mirror-rpm/latest/rhel-atomic-host-rpms/
+enabled=1
+gpgcheck=0
+
+[rhel-7-server-rpms]
+name=rhel-7-server-rpms
+baseurl=https://repository.redhat.com/mirror-rpm/latest/rhel-7-server-rpms/
+enabled=1
+gpgcheck=0
+
+[rhel-7-server-optional-rpms]
+name=Optional Packages for Enterprise Linux 7 -
+baseurl=https://repository.redhat.com/mirror-rpm/latest/rhel-7-server-optional-rpms/
+enabled=1
+gpgcheck=0
+
+[rhel-7-server-eus-rpms]
+name=BL-rhel-7-server-eus-rpms
+baseurl=https://repository.redhat.com/mirror-rpm/latest/rhel-7-server-eus-rpms/
+enabled=1
+gpgcheck=0
+
+[rhel-7-server-extras-rpms]
+name=rhel-7-server-extras-rpms
+baseurl=https://repository.redhat.com/mirror-rpm/latest/rhel-7-server-extras-rpms/
+enabled=1
+gpgcheck=0
+
+[epel-el-7]
+name=Extra Packages for Enterprise Linux 7 - $basearch
+baseurl=https://repository.redhat.com/mirror-rpm/latest/epel-el-7/
+enabled=1
+gpgcheck=0
