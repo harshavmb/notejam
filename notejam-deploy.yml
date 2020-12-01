@@ -1,0 +1,163 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: notejam
+  namespace: apps
+  selfLink: /apis/apps/v1/namespaces/apps/deployments/notejam
+  uid: b07fb09e-043e-4660-9685-74afd81ea7f7
+  resourceVersion: '3338081'
+  generation: 1
+  creationTimestamp: '2020-11-18T18:13:49Z'
+  labels:
+    app: notejam
+  annotations:
+    deployment.kubernetes.io/revision: '1'
+  managedFields:
+    - manager: kubectl-create
+      operation: Update
+      apiVersion: apps/v1
+      time: '2020-11-18T18:13:49Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:labels':
+            .: {}
+            'f:app': {}
+        'f:spec':
+          'f:progressDeadlineSeconds': {}
+          'f:replicas': {}
+          'f:revisionHistoryLimit': {}
+          'f:selector':
+            'f:matchLabels':
+              .: {}
+              'f:app': {}
+          'f:strategy':
+            'f:rollingUpdate':
+              .: {}
+              'f:maxSurge': {}
+              'f:maxUnavailable': {}
+            'f:type': {}
+          'f:template':
+            'f:metadata':
+              'f:labels':
+                .: {}
+                'f:app': {}
+                'f:name': {}
+            'f:spec':
+              'f:containers':
+                'k:{"name":"notejam"}':
+                  .: {}
+                  'f:image': {}
+                  'f:imagePullPolicy': {}
+                  'f:name': {}
+                  'f:ports':
+                    .: {}
+                    'k:{"containerPort":5000,"protocol":"TCP"}':
+                      .: {}
+                      'f:containerPort': {}
+                      'f:name': {}
+                      'f:protocol': {}
+                  'f:resources': {}
+                  'f:terminationMessagePath': {}
+                  'f:terminationMessagePolicy': {}
+              'f:dnsConfig':
+                .: {}
+                'f:nameservers': {}
+              'f:dnsPolicy': {}
+              'f:restartPolicy': {}
+              'f:schedulerName': {}
+              'f:securityContext': {}
+              'f:terminationGracePeriodSeconds': {}
+    - manager: kube-controller-manager
+      operation: Update
+      apiVersion: apps/v1
+      time: '2020-11-25T17:04:34Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:deployment.kubernetes.io/revision': {}
+        'f:status':
+          'f:availableReplicas': {}
+          'f:conditions':
+            .: {}
+            'k:{"type":"Available"}':
+              .: {}
+              'f:lastTransitionTime': {}
+              'f:lastUpdateTime': {}
+              'f:message': {}
+              'f:reason': {}
+              'f:status': {}
+              'f:type': {}
+            'k:{"type":"Progressing"}':
+              .: {}
+              'f:lastTransitionTime': {}
+              'f:lastUpdateTime': {}
+              'f:message': {}
+              'f:reason': {}
+              'f:status': {}
+              'f:type': {}
+          'f:observedGeneration': {}
+          'f:readyReplicas': {}
+          'f:replicas': {}
+          'f:updatedReplicas': {}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notejam
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: notejam
+        name: notejam
+    spec:
+      containers:
+        - name: notejam
+          image: 'hub.docker.com/notejam:0.7.0'
+          ports:
+            - name: http
+              containerPort: 5000
+              protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: None
+      securityContext: {}
+      schedulerName: default-scheduler
+      dnsConfig:
+        nameservers:
+          - 172.25.74.64
+          - 172.25.74.70
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 600
+status:
+  observedGeneration: 1
+  replicas: 1
+  updatedReplicas: 1
+  readyReplicas: 1
+  availableReplicas: 1
+  conditions:
+    - type: Progressing
+      status: 'True'
+      lastUpdateTime: '2020-11-18T18:14:02Z'
+      lastTransitionTime: '2020-11-18T18:13:49Z'
+      reason: NewReplicaSetAvailable
+      message: ReplicaSet "notejam-5fdb698dd4" has successfully progressed.
+    - type: Available
+      status: 'True'
+      lastUpdateTime: '2020-11-25T17:03:31Z'
+      lastTransitionTime: '2020-11-25T17:03:31Z'
+      reason: MinimumReplicasAvailable
+      message: Deployment has minimum availability.
+

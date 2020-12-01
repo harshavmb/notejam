@@ -1,0 +1,51 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: notejam-svc
+  namespace: apps
+  selfLink: /api/v1/namespaces/apps/services/notejam-svc
+  uid: a0d8b59a-f3e7-4c10-b8de-9ee032a6bd24
+  resourceVersion: '1367854'
+  creationTimestamp: '2020-11-18T18:13:52Z'
+  labels:
+    app: notejam
+  managedFields:
+    - manager: kubectl-create
+      operation: Update
+      apiVersion: v1
+      time: '2020-11-18T18:13:52Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:labels':
+            .: {}
+            'f:app': {}
+        'f:spec':
+          'f:externalTrafficPolicy': {}
+          'f:ports':
+            .: {}
+            'k:{"port":5000,"protocol":"TCP"}':
+              .: {}
+              'f:port': {}
+              'f:protocol': {}
+              'f:targetPort': {}
+          'f:selector':
+            .: {}
+            'f:app': {}
+          'f:sessionAffinity': {}
+          'f:type': {}
+spec:
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+      nodePort: 32752
+  selector:
+    app: notejam
+  clusterIP: 10.233.7.67
+  type: NodePort
+  sessionAffinity: None
+  externalTrafficPolicy: Cluster
+status:
+  loadBalancer: {}
+
